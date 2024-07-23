@@ -1,0 +1,32 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  header, footer {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+  }
+  
+  h1, h2 {
+    color: #343a40;
+  }
+  
+  .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  footer a {
+    color: #007bff;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
