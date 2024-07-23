@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../static/index.css" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ 
+</head>
+
+<body>
+  <div class="gunmetal-container">
+    <div style="padding-top: 100px;">
+      <!-- header -->
+      <div style="
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            position: fixed; top: 0; width: 100%;
+            background-color:  #182554;
+            z-index: 9999;
+          " class="navlinks">
+        <a href="{{url_for('home')}}" class="links">
+          <img src="../static/uploads/on_poll.jpeg" style="height: 100px;width:170px;">
+          
+        </a>
+        <nav style="color: rgb(219, 219, 219); display: flex; flex-direction: row; gap: 30px; font-size: 20px;">
+          <!-- logo -->
+          <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                <a class="nav-link" href="{{ url_for('user_login') }}">Login</a>
+                <a class="nav-link" href="{{ url_for('user_register') }}">Register</a>
+                
+        </nav>
+      </div>
+      <!-- header -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4 text-center">Welcome to the Online Voting System</h1>
+            <p class="lead text-center">This is the homepage with an introduction to the voting system.</p>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>About Online Polls</h2>
+                <p>Online polls allow users to participate in voting through the internet, providing convenience and accessibility.</p>
+            </div>
+            <div class="col-md-6">
+                <h2>Types of Polls</h2>
+                <p>There are various types of polls, including public opinion polls, election polls, and customer satisfaction surveys.</p>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h2>Process of Polling Questions</h2>
+                <p>Users can create polls, add questions, and manage poll options through the online voting system interface.</p>
+            </div>
+            <div class="col-md-6">
+                <h2>How to Vote</h2>
+                <p>To vote in a poll, users select their choices from the provided options and submit their votes securely.</p>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <h2>Additional Pages</h2>
+            <ul>
+                <li><a href="#">Create Poll</a></li>
+                <li><a href="#">View Results</a></li>
+                <li><a href="#">FAQs</a></li>
+            </ul>
+        </div>
+    </div>
+

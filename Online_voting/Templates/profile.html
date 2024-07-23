@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+ 
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ 
+</head>
+
+<body>
+  <div class="gunmetal-container">
+    <div style="padding-top: 100px;">
+      <!-- header -->
+      <div style="
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            position: fixed; top: 0; width: 100%;
+            background-color:  #182554;
+            z-index: 9999;
+          " class="navlinks">
+        <a href="{{url_for('home')}}" class="links">
+          <img src="../static/uploads/on_poll.jpeg" style="height: 100px;width:170px;">          
+        </a>
+        <nav style="color: rgb(219, 219, 219); display: flex; flex-direction: row; gap: 30px; font-size: 20px;">
+          <!-- logo -->
+          <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                <a class="nav-link" href="{{ url_for('user_login') }}">Login</a>
+                <a class="nav-link" href="{{ url_for('user_register') }}">Register</a>
+                <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
+                <a class="nav-link" href="{{ url_for('polls') }}">Polls</a>
+                <a class="nav-link" href="{{ url_for('user_logout') }}">Logout</a>
+        </nav>
+      </div>
+      {% extends "base.html" %}
+
+      {% block title %}My Profile - Online Voting System{% endblock %}
+      
+      {% block content %}
+          <div class="container mt-5">
+              <h1 class="mb-4">My Profile</h1>
+              {% for users in user %}
+              <div class="card mb-3">
+                  <div class="card-body">
+                      <h5 class="card-title">User Information</h5>
+                      <p class="card-text"><strong>ID:</strong> {{ users.user_id }}</p>
+                      <p class="card-text"><strong>Username:</strong> {{ users.username }}</p>
+                      <!-- Add more fields as needed -->
+      
+                      <a href="{{ url_for('edit_profile', user_id=users.user_id) }}" class="btn btn-primary">Edit Profile</a>
+                  </div>
+              </div>
+              {% endfor %}
+      
+              <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+          </div>
+      {% endblock %}
+      
+</body>
+</html>

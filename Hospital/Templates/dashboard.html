@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+ <link rel="Stylesheet" href="../static/stylesheet2.css" >
+</head>
+
+<body>
+    <div class="div1">
+        <h3>Contact Us +96366 20000/01 | suh@hospital.com </h3>
+    </div>
+    <table class="tab1">
+       <td >
+        <p ><span >Super</span>Hospital</p>
+
+       </td>
+       <td >
+    <nav>
+    <a href="{{url_for('home')}}">Home</a>
+    <a href="{{url_for('about')}}">About Us</a>
+    <a href="{{url_for('services')}}">Services</a>
+    <a href="{{url_for('doctors')}}">Doctors</a>
+    <a href="{{url_for('contact')}}">Contact Us</a>
+    <a href="{{url_for('dashboard')}}">Dashboard</a>
+</nav></td></table>
+    <div align="center">
+        <div align="center" class="border">
+            <div class="header">
+                <h1 class="word">Dashboard</h1>
+            
+            </div>
+
+            <div class="msg">{{ msg }}</div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email Id</th>
+                        <th>Mobile Number</th>
+                        <th>Gender</th>
+                        <th>Appointment_date</th>
+                        <th>Comment</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in data %}
+                    <tr>
+                        <td>{{ i[0] }}</td> <!-- Assuming story[0] is the User ID -->
+                        <td>{{ i[1] }}</td> <!-- Assuming story[1] is the Story ID -->
+                        <td>{{ i[2] }}</td> <!-- Assuming story[2] is the Title -->
+                        <td>{{ i[3] }}</td> <!-- Assuming story[3] is the Story -->
+                         <td>{{i[4]}}</td> 
+                         <td>{{i[5]}}</td>
+                         <td>{{i[6]}}</td>
+                         <td>{{i[7]}}</td>
+                        <td><a href="{{ url_for('update', id=i[0]) }}" class="a">Edit</a></td> 
+                        <td><a href="{{ url_for('delete', id=i[0]) }}" class="a">Delete</a></td> 
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <p class="p">
+                click on link to redirect to home page<a href="{{url_for('home')}}" class="a">Home_Page</a>
+             </p>
+        </div>
+    </div>
+</body>
+</html>

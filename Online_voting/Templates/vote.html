@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+    
+       
+    <div class="container">
+        <h1>{{ polls.title }}</h1>
+        <h1>{{ polls.description }}</h1>
+        <h1>{{questions.question}}</h1>
+        <hr>
+        <form action="{{ url_for('vote', poll_id=polls.poll_id) }}" method="POST">
+            {% for quest in questions %}
+            <div >
+                <label>{{ quest.question }}</label>
+                <div class="form-check">
+                    <input  type="radio" name="option" id="option1" value="{{ quest.option1 }}" required>
+                    <label for="option1">{{ quest.option1 }}</label>
+                </div>
+                <div >
+                    <input  type="radio" name="option" id="option2" value="{{ quest.option2 }}" required>
+                    <label  for="option2">{{ quest.option2 }}</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary"><a href="{{url_for('results', poll_id=polls.poll_id)}}" >Vote</a></button>
+            {% endfor %}
+        </form>
+    </div>
+    
+    
+        
+    
+</body>
+</html>

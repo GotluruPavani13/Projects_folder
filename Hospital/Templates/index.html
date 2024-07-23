@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>homepage</title>
+    <link rel="stylesheet" href="../static/stylesheet2.css">
+    </head>
+    <body>
+        <div class="div1">
+            <h3>Contact Us +96366 20000/01 | suh@hospital.com </h3>
+        </div>
+        <table class="tab1">
+           <td >
+            <p ><span >Super</span>Hospital</p>
+
+           </td>
+           <td >
+            <nav>
+               <a href="{{url_for('home')}}">Home</a>
+            <a href="{{url_for('about')}}">About Us</a>
+            <a href="{{url_for('services')}}">Services</a>
+            <a href="{{url_for('doctors')}}">Doctors</a>
+            <a href="{{url_for('contact')}}">Contact Us</a>
+            <a href="{{url_for('dashboard')}}">Dashboard</a>
+            </nav>
+            </td></table>
+            <div class="d">
+            <div class="div2">
+               <div class="d2">
+                        <h4>Health Care Services</h4>
+                        <p class="p4">We care About Health </p>
+               </div>
+                </div>
+            </div>
+            <div class="div3">
+            <div class="div4">
+             <p class="p2">We are medical center</p>
+             <h2>We Have Plan Options For You</h2>
+             <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Ipsum dolorum corrupti, doloremque distinctio et incidunt cum debitis dolores nemo? 
+                 Vitae fugit non exercitationem debitis totam iure voluptates laudantium illum alias!</p>
+              
+                 <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Possimus, quis unde atque autem similique mollitia ducimus.
+                      Labore quibusdam, illo asperiores laboriosam ut numquam, 
+                      facilis accusantium aliquid quasi autem aperiam et?</p>
+                     <br>
+                      
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        <li> Repellendus asperiores obcaecati quod qui harum aspernatur reprehenderit accusamus tenetur quas quam.</li>
+                        <li> Et nostrum sunt alias ut expedita magnam molestiae modi esse rem omnis? </li>
+                        <li>Quasi vitae architecto distinctio ipsa impedit fugit illo ab voluptas.</li>
+                        <li>Voluptas eveniet cupiditate totam voluptates sed quaerat nemo quae.</li>                     
+            </div>
+            </div>
+            
+            <div class="div5">
+                    <h1>Make An Appointment</h1>
+                    <form action="{{url_for('display')}}" method="POST">
+                   <table class="tab2">
+                    <tr>
+                    <td><label for="fname">First Name</label><input id="fname" name="fname" type="text" placeholder="First Name"></td>
+                    <td><label for="lname">Last Name</label><input id="lname" name="lname" type="text" placeholder="Last Name"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email</label><br><input id="email" name="email" type="email"  placeholder="Email Id"></td>
+                    <td><label for="mobile">Mobile</label><br> <input id="mobile" name="mobile"  type="number" placeholder="Mobile Number"></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender</label><br> <select id="gender" name="gender">
+                        <option>Male</option>
+                        <option>Female</option></td></select>
+                    <td><label for="date">Appointment_date</label><input id="date" name="date" type="text" placeholder="Appointment Date"></td>
+                </tr>
+                <tr><td colspan="2"><label for="comment"></label> <textarea type="text" id="comment" name="comment"></textarea></td></tr>
+                <tr><td colspan="2"><input type="submit" value="Submit" class="inp"></td></tr>
+                   </table>
+                   </form>
+            </div>
+        
+            <footer>
+                <div class="div6"><span>&#169</span>SUPER Hospital,site designed & developed by MITRAz</div>
+            </footer>
+           
+    </body>
+    </html>

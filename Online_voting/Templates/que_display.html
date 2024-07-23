@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+</head>
+
+<body>
+    <div style="padding-top: 130px;">
+        <!-- header -->
+        <div style="
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            position: fixed; top: 0; width: 100%;
+            background-color: #182554;
+            z-index: 9999;
+          " class="navlinks">
+            <a href="#" class="links">
+                <img src="../static/uploads/on_poll.jpeg" style="height: 100px;width:170px;">                
+            </a>
+            <span style="color: White ; font-size: 40px; margin-right: 440px;"> Online Voting</span>
+        </div>
+        <!-- header -->
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ url_for('admin_dashboard') }}">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('create_poll') }}">Create Polls</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('question', poll_id=1) }}">Questions</a>
+                        </li>
+        
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 content">
+    <div class="container mt-5">
+        <h1 class="mb-4">Questions for Poll: <span class="course-name">{{ que[0].title }}</span></h1>
+        <a href="{{ url_for('question') }}" class="btn btn-primary btn-back">Back to Questions</a>
+        <ul class="list-group mt-3">
+            {% for ques in que %}
+                <li class="list-group-item">
+                    <h5>{{ ques.question }}</h5>
+                    <p>{{ ques.option1 }}</p>
+                    <p>{{ ques.option2 }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</main>
+</div>
+</div>
+<!-- Footer -->
+<footer class="text-center mt-5" style="background-color: #182554; color: white; padding: 10px 0;">
+    <div class="container">
+        <p>&copy; 2024 Vertex Software. All rights reserved.</p>
+        <p>
+            <a href="#" style="color: #cfd8dc; text-decoration: none;">Privacy Policy</a> |
+            <a href="#" style="color: #cfd8dc; text-decoration: none;">Terms of Service</a> |
+            <a href="#" style="color: #cfd8dc; text-decoration: none;">Contact Us</a>
+        </p>
+    </div>
+</footer>
+<!-- End of Footer -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
